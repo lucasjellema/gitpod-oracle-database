@@ -12,13 +12,10 @@ tasks:
   - command: |
       alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql"
       wget https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip && unzip -q sqlcl-latest.zip && \
-      echo "Current time: $(date +%T)"
       echo "done with download and unzip SQLcl and now sleep for 30 seconds until db is running" 
-      echo "Current time: $(date +%T)"
       sleep 30s
-      echo done with sleeping
-      echo "Current time: $(date +%T)"
-      sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba @".prepare/create-user-dev"
+      /workspace/gitpod-oracle-database/sqlcl/bin/sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba @".prepare/create-user-dev"
+      # sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba @".prepare/create-user-dev"
 
 ports:
 
