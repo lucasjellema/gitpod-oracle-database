@@ -1,0 +1,21 @@
+tasks:
+  - init: |
+      docker pull gvenzl/oracle-xe
+      # open the readme document for the first lab in VS code; note: thanks to the configuration in .vscode/settings.json, the document opens in markdown preview nide
+      gp open README.md
+  - command: |
+      docker run -d -p 1521:1521 -e ORACLE_PASSWORD=TheSuperSecret1509! gvenzl/oracle-xe
+      echo Oracle Database is running; accessible at localhost, port 1521; database SID = XE
+
+ports:
+
+  # Oracle Database XE
+  - port: 1521
+    onOpen: ignore
+    visibility: public # this makes the database accessible from anywhere
+
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker    
+    # oracle dev tools
+    # some database browser extension
