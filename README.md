@@ -13,3 +13,9 @@ docker exec -it oracle-database-xe sqlplus sys/TheSuperSecret1509! as sysdba
 The database is started using the Docker Container image prepared by Gerald Venzl. See [Container Image Details](https://github.com/gvenzl/oci-oracle-xe). 
 
 You can use the VS Code Oracle Developer Tools extension for VS Code - which is preconfigured with a database connection for the SYS account.
+
+SQLcl command line tool has also been installed and can be accessed using:
+
+```
+sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba 
+```  

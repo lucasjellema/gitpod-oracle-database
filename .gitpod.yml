@@ -9,6 +9,12 @@ tasks:
       echo "Oracle Database XE is running. The database is accessible at localhost, port 1521; database SID = XE" && \
       sleep 30s && \ 
       docker exec -it oracle-database-xe sqlplus sys/TheSuperSecret1509! as sysdba
+  - command: |
+      wget https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip
+      unzip -q sqlcl-latest.zip 
+      sleep 30s && \
+      alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql"
+      sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba 
 
 ports:
 
