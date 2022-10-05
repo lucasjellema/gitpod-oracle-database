@@ -31,7 +31,7 @@
             "databaseHostName": "localhost",
             "databasePortNumber": "1521",
             "databaseServiceName": "XEPDB1",
-            "name": "DEV",
+            "name": "DEV.XEPDB1",
             "currentSchema": "",
             "tnsAdmin": "/home/gitpod/Oracle/network/admin"
         },
@@ -40,13 +40,13 @@
             "dBAPrivilege": "None",
             "userID": "APP",
             "passwordSaved": true,
-            "password": "PAPPW",
+            "password": "APPPW",
             "dataSource": "localhost:1521/XEPDB1",
             "connectionType": 2,
             "databaseHostName": "localhost",
             "databasePortNumber": "1521",
             "databaseServiceName": "XEPDB1",
-            "name": "DEV",
+            "name": "APP.XEPDB1",
             "currentSchema": "",
             "tnsAdmin": "/home/gitpod/Oracle/network/admin"
         }
