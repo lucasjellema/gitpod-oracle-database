@@ -19,6 +19,21 @@
             "name": "SYS.XE",
             "currentSchema": "",
             "tnsAdmin": "/home/gitpod/Oracle/network/admin"
+        },
+        {
+            "authenticationType": 2,
+            "dBAPrivilege": "None",
+            "userID": "DEV",
+            "passwordSaved": true,
+            "password": "DEV_PW",
+            "dataSource": "localhost:1521/XE",
+            "connectionType": 2,
+            "databaseHostName": "localhost",
+            "databasePortNumber": "1521",
+            "databaseServiceName": "XE",
+            "name": "DEV",
+            "currentSchema": "",
+            "tnsAdmin": "/home/gitpod/Oracle/network/admin"
         }
     ]
 

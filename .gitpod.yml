@@ -10,18 +10,18 @@ tasks:
       sleep 30s && \ 
       docker exec -it oracle-database-xe sqlplus sys/TheSuperSecret1509! as sysdba
   - command: |
-      wget https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip
+      wget https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip && \
       unzip -q sqlcl-latest.zip 
       alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql" 
       sleep 30s && \
-      sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba 
+      sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba @.prepare/create-user-dev
 
 ports:
 
   # Oracle Database XE
   - port: 1521
     onOpen: ignore
-    visibility: public # this makes the database accessible from anywhere
+    visibility: private
 
 vscode:
   extensions:

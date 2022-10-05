@@ -19,3 +19,9 @@ SQLcl command line tool has also been installed and can be accessed using:
 ```
 sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba 
 ```  
+
+A database user has been setup with username DEV and password DEV_PW. A connection for this user is created in VS Code Oracle Developer Tools. Connect through SQLcl can be done using:
+
+```
+sql DEV/DEV_PW@localhost:1521/xe 
+```  
