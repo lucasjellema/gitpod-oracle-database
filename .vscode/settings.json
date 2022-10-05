@@ -34,6 +34,21 @@
             "name": "DEV",
             "currentSchema": "",
             "tnsAdmin": "/home/gitpod/Oracle/network/admin"
+        },
+        {
+            "authenticationType": 2,
+            "dBAPrivilege": "None",
+            "userID": "APP",
+            "passwordSaved": true,
+            "password": "PAPPW",
+            "dataSource": "localhost:1521/XEPDB1",
+            "connectionType": 2,
+            "databaseHostName": "localhost",
+            "databasePortNumber": "1521",
+            "databaseServiceName": "XEPDB1",
+            "name": "DEV",
+            "currentSchema": "",
+            "tnsAdmin": "/home/gitpod/Oracle/network/admin"
         }
     ]
 
