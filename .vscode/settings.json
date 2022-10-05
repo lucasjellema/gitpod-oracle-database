@@ -26,11 +26,11 @@
             "userID": "DEV",
             "passwordSaved": true,
             "password": "DEV_PW",
-            "dataSource": "localhost:1521/XE",
+            "dataSource": "localhost:1521/XEPDB1",
             "connectionType": 2,
             "databaseHostName": "localhost",
             "databasePortNumber": "1521",
-            "databaseServiceName": "XE",
+            "databaseServiceName": "XEPDB1",
             "name": "DEV",
             "currentSchema": "",
             "tnsAdmin": "/home/gitpod/Oracle/network/admin"
