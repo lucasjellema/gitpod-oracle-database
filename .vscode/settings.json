@@ -3,5 +3,23 @@
         {
             "README.md": "vscode.markdown.preview.editor",
         },
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "oracledevtools.connections": [
+        {
+            "authenticationType": 1,
+            "dBAPrivilege": "SYSDBA",
+            "userID": "SYS",
+            "passwordSaved": true,
+            "password": "TheSuperSecret1509!",
+            "dataSource": "localhost:1521/XE",
+            "connectionType": 2,
+            "databaseHostName": "localhost",
+            "databasePortNumber": "1521",
+            "databaseServiceName": "XE",
+            "name": "SYS.XE",
+            "currentSchema": "",
+            "tnsAdmin": "/home/gitpod/Oracle/network/admin"
+        }
+    ]
+
 }
