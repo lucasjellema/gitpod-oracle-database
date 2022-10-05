@@ -12,8 +12,8 @@ tasks:
   - command: |
       wget https://download.oracle.com/otn_software/java/sqldeveloper/sqlcl-latest.zip
       unzip -q sqlcl-latest.zip 
+      alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql" 
       sleep 30s && \
-      alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql"
       sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba 
 
 ports:
