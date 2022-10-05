@@ -8,10 +8,7 @@ tasks:
       docker ps &&  \
       echo "Oracle Database XE is running. The database is accessible at localhost, port 1521; database SID = XE" && \
       sleep 30s && \ 
-      echo "Go create additional database userschema developer with password devPassword! " && \
-      docker exec oracle-database-xe createAppUser developer devPassword!  && \ 
-      docker exec -it oracle-database-xe sqlplus developer/devPassword! 
-# docker exec -it oracle-database-xe sqlplus sys/TheSuperSecret1509! as sysdba
+      docker exec -it oracle-database-xe sqlplus sys/TheSuperSecret1509! as sysdba
 
 ports:
 
