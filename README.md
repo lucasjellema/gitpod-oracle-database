@@ -14,7 +14,7 @@ The database is started using the Docker Container image prepared by Gerald Venz
 
 You can use the VS Code Oracle Developer Tools extension for VS Code - which is preconfigured with a database connection for the SYS account.
 
-SQLcl command line tool has also been installed and can be accessed using:
+SQLcl command line tool (see [SQLcl introduction](https://www.oracle.com/database/sqldeveloper/technologies/sqlcl/) for details) has also been installed and can be accessed using:
 
 ```
 sql sys/"TheSuperSecret1509!"@localhost:1521/xe as sysdba 
