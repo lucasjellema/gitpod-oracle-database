@@ -14,18 +14,17 @@ tasks:
   - name: start container and run SQL*Plus session as user APP
     init: gp sync-await database-running
     command: |
-      docker start oracle-database-xe  # only needed if container is not running anymore
+      docker start oracle-database-xe  &&
       docker ps &&  
+      sleep 3s && 
       echo "Oracle Database XE is running. The database is accessible at localhost, port 1521; database SID = XE and has an additional user APP/APPPW in PDB XEPDB1 " && 
       gp sync-done database-started &&
-      sleep 3s && 
       docker exec -it oracle-database-xe sqlplus sys/TheSuperSecret1509! as sysdba
   - name: Open SQLcl for user APP
     init: |
       gp sync-await database-running
     command: |
-      gp sync-await database-started
-      alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql"
+      gp sync-await database-started &&
       /workspace/gitpod-oracle-database/sqlcl/bin/sql APP/APPPW@localhost:1521/xepdb1 
 
 ports:
