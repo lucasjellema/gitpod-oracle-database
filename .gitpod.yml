@@ -10,14 +10,13 @@ tasks:
       gp open README.md
   - command: |
       docker start oracle-database-xe  # only needed if container is not running anymore
-      sleep 2s && \
       docker ps &&  \
       echo "Oracle Database XE is running. The database is accessible at localhost, port 1521; database SID = XE and has an additional user APP/APPPW in PDB XEPDB1 " && \
-      sleep 30s && \ 
+      sleep 3s && \ 
       docker exec -it oracle-database-xe sqlplus sys/TheSuperSecret1509! as sysdba
   - command: |
       alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql"
-      sql APP/APPPW@localhost:1521/xepdb1 
+      /workspace/gitpod-oracle-database/sqlcl/bin/sql APP/APPPW@localhost:1521/xepdb1 
 
 ports:
 
