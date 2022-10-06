@@ -1,6 +1,10 @@
 # gitpod-oracle-database
 Run Gitpod workspace with Oracle Database
 
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/lucasjellema/gitpod-oracle-database)
+
+
 Oracle Database XE is running in a container called *oracle-database-xe*.
 You can access the database at port 1521 on localhost - using user SYS (as SYSDBA) and password TheSuperSecret1509! or user developer with password devPassword!
 
