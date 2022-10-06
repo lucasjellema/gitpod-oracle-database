@@ -23,8 +23,8 @@ tasks:
   - name: Open SQLcl for user APP
     init: |
       gp sync-await database-running
-      gp sync-await database-started
     command: |
+      gp sync-await database-started
       alias sql="/workspace/gitpod-oracle-database/sqlcl/bin/sql"
       /workspace/gitpod-oracle-database/sqlcl/bin/sql APP/APPPW@localhost:1521/xepdb1 
 
