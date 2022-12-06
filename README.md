@@ -46,6 +46,25 @@ Let's change the password for user APP - and allow a grace period of one day:
 
 alter user APP identified by newpasswd1 
 
+Check if connect with both old and new password
+
+
+
+create audit policy connection_policy actions logon  WHEN 'SYS_CONTEXT(''USERENV'',''SESSION_USER'')=''APP''' evaluate per session;
+audit policy connection_policy;
+
+create audit policy connection_policy actions logon  WHEN 'SYS_CONTEXT(''USERENV'',''SESSION_USER'')<>''ZZZZAPP''' evaluate per session;
+audit policy connection_policy;
+
+select to_char(event_timestamp, 'DD/MM/YYYY HH24:MI:SS.FF3'), action_name
+from unified_audit_trail where dbusername='APP' order by 1;
+
+
+To drop audit policy:
+
+noaudit policy connection_policy;
+drop audit policy connection_policy;
+
 
 
 ## Resources
@@ -55,8 +74,11 @@ SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Unified Auditing'
 
 Initially returns false. That means that unified auditing is not enabled. I am trying to figure out how to enable it.
 
-select dbusername, authentication_type
+select action_name, dbusername, authentication_type, scn
 from unified_audit_trail
 where action_name= 'LOGON' 
 
 At some point 
+
+
+[MyOracle Support - How To Audit Of User Login & Logoff of Database by Unified Auditing](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=179570306193450&parent=EXTERNAL_SEARCH&sourceId=HOWTO&id=2509211.1&_afrWindowMode=0&_adf.ctrl-state=r8fsqq1di_4)
