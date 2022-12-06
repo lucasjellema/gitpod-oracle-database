@@ -29,3 +29,34 @@ A database user has been setup with username DEV and password DEV_PW and another
 ```
 sql DEV/DEV_PW@localhost:1521/XEPDB1 
 ```  
+
+# Password Grace Period
+
+As of Oracle Database 19c, we can define a grace period when the password of an account is changed (see for example [New Features Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/newft/gradual-database-password-rollover-applications.html)). During the grace period, sessions can still be created by logging in with the old password. This to allow the new password to be distributed - for example in the form of database wallets - to all applications and servers that need to connect. 
+
+Before changing a password with grace period can be done for a particular user, that user needs to be associated with a profile that allows a password grace period  
+
+/workspace/gitpod-oracle-database/sqlcl/bin/sql sys/"TheSuperSecret1509!"@localhost:1521/xepdb1 as sysdba
+
+create profile password_rollover_time_one_day_profile limit password_rollover_time 1;
+
+alter user APP profile password_rollover_time_one_day_profile;
+
+Let's change the password for user APP - and allow a grace period of one day:
+
+alter user APP identified by newpasswd1 
+
+
+
+## Resources
+Tim Scott: [Gradual Database Password Rollover Time (PASSWORD_ROLLOVER_TIME) in Oracle Database 19c and 21c](https://oracle-base.com/articles/21c/gradual-database-password-rollover-time-21c)
+
+SELECT VALUE FROM V$OPTION WHERE PARAMETER = 'Unified Auditing'
+
+Initially returns false. That means that unified auditing is not enabled. I am trying to figure out how to enable it.
+
+select dbusername, authentication_type
+from unified_audit_trail
+where action_name= 'LOGON' 
+
+At some point 
